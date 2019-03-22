@@ -38,7 +38,6 @@ main {
   .calculator {
     display: flex;
     flex-direction: column;
-    // flex-wrap: nowrap;
     box-sizing: border-box;
     background-color: color(color_blue, main);
     width: 350px;
@@ -111,12 +110,14 @@ main {
       box-sizing: border-box;
 
       li {
+        cursor: pointer;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         width: 72px;
         height: 64px;
         margin: 8px;
+        border-radius: 16px;
         font-size: nth($font, 2);
         font-weight: 300;
         &.operation {
@@ -126,6 +127,13 @@ main {
           color: color(other, white);
           background-color: color(color_blue, dark);
           font-weight: normal;
+        }
+        &:hover {
+          color: color(color_blue, light);
+        }
+        &:active {
+          color: color(color_blue, dark);
+          background-color: color(color_gray, light);
         }
       }
     }
@@ -142,18 +150,33 @@ main {
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
+        cursor: pointer;
         width: 72px;
         height: 64px;
         margin: 8px;
+        border-radius: 16px;
         font-size: nth($font, 2);
         color: color(color_blue, light);
         &#sum_btn {
           justify-content: flex-end;
           padding-right: 30px;
           width: 155px;
-          border-radius: 16px;
           color: color(other, white);
           background: linear-gradient(90deg, color(color_blue, light), color(color_blue, purple));
+          &:hover {
+            color: color(color_gray, light);
+          }
+          &:active {
+            color: color(color_blue, dark);
+            background: color(color_gray, light);
+          }
+        }
+        &:hover {
+          color: color(color_gray, light);
+        }
+        &:active {
+          color: color(color_blue, dark);
+          background-color: color(color_gray, light);
         }
       }
     }
