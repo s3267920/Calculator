@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style/calculator.min.css" />
+  </head>
+  <!-- 【特定技術】數字位數過多時，不能因此而破版，計算機功能皆須齊全
+
+【自我學習】請在此關卡中「自學一個你原本不太會的技巧」，投稿時分享你透過哪些資源學習，並寫範例程式碼講解該技巧，以及你如何應用在此關卡上。 -->
+
+  <body>
+    <main>
+      <div class="calculator">
+        <div class="calculator_head">
+          <input type="text" value="1,280 × 30 − 200" disabled />
+          <span class="total"></span>
+        </div>
+        <div class="calculator_body">
+          <ul class="calculator_number">
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li class="operation">÷</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li class="operation">×</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li class="operation">+</li>
+            <li>0</li>
+            <li>00</li>
+            <li>.</li>
+            <li class="operation">-</li>
+          </ul>
+          <ul class="calculator_bottom">
+            <li id="reset_btn">AC</li>
+            <li id="delete_btn">⌫</li>
+            <li id="sum_btn">=</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
