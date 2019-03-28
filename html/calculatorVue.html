@@ -3,15 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Calculator</title>
+    <title>Calculator(Vue)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style/calculator.min.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.8.1/js/brands.js"
+      integrity="sha384-rUOIFHM3HXni/WG5pzDhA1e2Js5nn4bWudTYujHbbI9ztBIxK54CL4ZNZWwcBQeD"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.8.1/js/fontawesome.js"
+      integrity="sha384-EMmnH+Njn8umuoSMZ3Ae3bC9hDknHKOWL2e9WJD/cN6XLeAN7tr5ZQ0Hx5HDHtkS"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../style/calculator.min.css" />
   </head>
   <!-- 【特定技術】數字位數過多時，不能因此而破版，計算機功能皆須齊全
 
 【自我學習】請在此關卡中「自學一個你原本不太會的技巧」，投稿時分享你透過哪些資源學習，並寫範例程式碼講解該技巧，以及你如何應用在此關卡上。 -->
 
   <body>
+    <header>
+      <nav class="version_toggle">
+        <ul>
+          <a href="../calculator.html">
+            <li>原生JS 版本</li>
+          </a>
+          <a href="calculatorVue.html" class="onPage">
+            <li>Vue 版本</li>
+          </a>
+          <a href="calculatorReact.html">
+            <li>React 版本</li>
+          </a>
+        </ul>
+      </nav>
+    </header>
     <main id="app">
       <div class="calculator">
         <div class="calculator_head">
@@ -45,7 +72,10 @@
         </div>
       </div>
     </main>
+    <footer>
+      <a href=""> <i class="fab fa-github github_icon"></i></a>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
-    <script src="calculatorVue.js"></script>
+    <script src="../js/calculatorVue.js"></script>
   </body>
 </html>

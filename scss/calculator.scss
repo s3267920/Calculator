@@ -5,10 +5,13 @@ $colors: (
     light: #e8e8e8
   ),
   color_blue: (
+    white: #b3edff,
     light: #00c4ff,
     main: #062145,
     dark: #041936,
-    purple: #6c00ff
+    gray: #1e2835,
+    purple: #6c00ff,
+    dark30: rgba(53, 73, 99, 0.7)
   ),
   other: (
     black40: rgba(0, 0, 0, 0.4),
@@ -26,13 +29,48 @@ body {
   min-width: 350px;
   font-family: Roboto, Helvetica, sans-serif;
 }
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: color(color_blue, gray);
 
+  nav {
+    ul {
+      display: flex;
+      a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 69px;
+        margin: 0 5px;
+        box-sizing: border-box;
+        text-decoration: none;
+        li {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 10px;
+          line-height: 40px;
+          color: color(other, white);
+          &:hover {
+            background-color: color(color_blue, dark30);
+            border-radius: 10px;
+          }
+        }
+      }
+      .onPage {
+        border-bottom: 5px solid color(color_gray, light);
+      }
+    }
+  }
+}
 main {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 830px;
+  min-height: 700px;
   background-color: color(color_gray, light);
 
   .calculator {
@@ -182,6 +220,22 @@ main {
     .has_key_down {
       color: color(color_blue, dark) !important ;
       background: color(color_gray, light) !important ;
+    }
+  }
+}
+footer {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: color(color_blue, gray);
+  .github_icon {
+    cursor: pointer;
+    color: color(other, white);
+    font-size: nth($font, 3);
+    &:hover {
+      font-size: 42px;
+      color: color(color_blue, white);
     }
   }
 }

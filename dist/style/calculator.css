@@ -474,6 +474,66 @@ body {
   font-family: Roboto, Helvetica, sans-serif;
 }
 
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1e2835;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav ul a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 69px;
+  margin: 0 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+header nav ul a li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  line-height: 40px;
+  color: #fff;
+}
+
+header nav ul a li:hover {
+  background-color: rgba(53, 73, 99, 0.7);
+  border-radius: 10px;
+}
+
+header nav ul .onPage {
+  border-bottom: 5px solid #e8e8e8;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -485,7 +545,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  min-height: 830px;
+  min-height: 700px;
   background-color: #e8e8e8;
 }
 
@@ -708,5 +768,30 @@ main .calculator_body .calculator_bottom #sum_btn:active {
 main .calculator_body .has_key_down {
   color: #041936 !important;
   background: #e8e8e8 !important;
+}
+
+footer {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1e2835;
+}
+
+footer .github_icon {
+  cursor: pointer;
+  color: #fff;
+  font-size: 34px;
+}
+
+footer .github_icon:hover {
+  font-size: 42px;
+  color: #b3edff;
 }
 /*# sourceMappingURL=calculator.css.map */
