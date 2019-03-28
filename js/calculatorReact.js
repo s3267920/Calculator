@@ -258,17 +258,30 @@
       let keyValue = this.state.keyValue;
       switch (way) {
         case 'sum':
-          if (!storeNum.length || this.compareOperation(storeNum[storeNum.length - 1])) {
+          if (!storeNum.length) {
             return;
           } else {
             //第一次按下 = 時
-            if (!getTotal) {
+            if (!getTotal && !this.compareOperation(storeNum[storeNum.length - 1])) {
               lastNum.push(newNum.join(''));
               let calculatorNum = this.calculatorNumHandle(storeNum);
               //小數部分處理
               let calculatorTotal = this.currencyHandle(
                 String(parseFloat(eval(calculatorNum.join('')).toPrecision(12)))
               );
+              total = calculatorTotal;
+              getTotal = true;
+              newNum = [];
+            } //初始狀態時，只有一個數字跟加減乘除時，加減乘除數字
+            else if (this.compareOperation(storeNum[storeNum.length - 1])) {
+              let newStoreNum = storeNum.concat(lastNum.slice(-2, -1));
+              textNum.push(lastNum[lastNum.length - 2]);
+              lastNum.push(lastNum[lastNum.length - 2]);
+              let calculatorNum = this.calculatorNumHandle(newStoreNum);
+              let calculatorTotal = this.currencyHandle(
+                String(parseFloat(eval(calculatorNum.join('')).toPrecision(12)))
+              );
+              storeNum = newStoreNum;
               total = calculatorTotal;
               getTotal = true;
               newNum = [];

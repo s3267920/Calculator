@@ -184,17 +184,31 @@
         const vm = this;
         switch (way) {
           case 'sum':
-            if (!vm.storeNum.length || vm.compareOperation(vm.storeNum[vm.storeNum.length - 1])) {
+            if (!vm.storeNum.length) {
               return;
             } else {
               //第一次按下 = 時
-              if (!vm.getTotal) {
+              if (!vm.getTotal && !vm.compareOperation(vm.storeNum[vm.storeNum.length - 1])) {
                 vm.lastNum.push(vm.newNum.join(''));
                 let calculatorNum = vm.calculatorNumHandle(vm.storeNum);
                 //小數部分處理
                 let calculatorTotal = vm.currencyHandle(
                   String(parseFloat(eval(calculatorNum.join('')).toPrecision(12)))
                 );
+                vm.total = calculatorTotal;
+                vm.getTotal = true;
+                vm.newNum = [];
+              }
+              //初始狀態時，只有一個數字跟加減乘除時，加減乘除數字
+              else if (vm.compareOperation(vm.storeNum[vm.storeNum.length - 1])) {
+                let newStoreNum = vm.storeNum.concat(vm.lastNum.slice(-2, -1));
+                vm.textNum.push(vm.lastNum[vm.lastNum.length - 2]);
+                vm.lastNum.push(vm.lastNum[vm.lastNum.length - 2]);
+                let calculatorNum = vm.calculatorNumHandle(newStoreNum);
+                let calculatorTotal = vm.currencyHandle(
+                  String(parseFloat(eval(calculatorNum.join('')).toPrecision(12)))
+                );
+                vm.storeNum = newStoreNum;
                 vm.total = calculatorTotal;
                 vm.getTotal = true;
                 vm.newNum = [];
