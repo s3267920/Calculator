@@ -540,29 +540,22 @@ main .calculator_head input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 8px 16px;
-  padding-top: 35px;
   line-height: 66px;
   border-radius: 20px 20px 0 0;
   background-color: #041936;
   color: #fff;
+}
+
+main .calculator_head input.calculator_text {
+  padding-top: 35px;
   font-size: 34px;
 }
 
 main .calculator_head .total {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 8px 16px;
   padding-top: 0;
-  line-height: 66px;
   color: #fff;
   font-size: 56px;
 }
@@ -630,15 +623,6 @@ main .calculator_body .calculator_number li {
   font-weight: 300;
 }
 
-main .calculator_body .calculator_number li.operation {
-  line-height: 28px;
-  margin-left: 4px;
-  border-radius: 16px;
-  color: #fff;
-  background-color: #041936;
-  font-weight: normal;
-}
-
 main .calculator_body .calculator_number li:hover {
   color: #00c4ff;
 }
@@ -646,6 +630,15 @@ main .calculator_body .calculator_number li:hover {
 main .calculator_body .calculator_number li:active {
   color: #041936;
   background-color: #e8e8e8;
+}
+
+main .calculator_body .calculator_number .operation {
+  line-height: 28px;
+  margin-left: 4px;
+  border-radius: 16px;
+  color: #fff;
+  background-color: #041936;
+  font-weight: normal;
 }
 
 main .calculator_body .calculator_bottom {
@@ -683,7 +676,16 @@ main .calculator_body .calculator_bottom li {
   color: #00c4ff;
 }
 
-main .calculator_body .calculator_bottom li#sum_btn {
+main .calculator_body .calculator_bottom li:hover {
+  color: #e8e8e8;
+}
+
+main .calculator_body .calculator_bottom li:active {
+  color: #041936;
+  background-color: #e8e8e8;
+}
+
+main .calculator_body .calculator_bottom #sum_btn {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -694,21 +696,17 @@ main .calculator_body .calculator_bottom li#sum_btn {
   background: linear-gradient(90deg, #00c4ff, #6c00ff);
 }
 
-main .calculator_body .calculator_bottom li#sum_btn:hover {
+main .calculator_body .calculator_bottom #sum_btn:hover {
   color: #e8e8e8;
 }
 
-main .calculator_body .calculator_bottom li#sum_btn:active {
+main .calculator_body .calculator_bottom #sum_btn:active {
   color: #041936;
   background: #e8e8e8;
 }
 
-main .calculator_body .calculator_bottom li:hover {
-  color: #e8e8e8;
-}
-
-main .calculator_body .calculator_bottom li:active {
-  color: #041936;
-  background-color: #e8e8e8;
+main .calculator_body .has_key_down {
+  color: #041936 !important;
+  background: #e8e8e8 !important;
 }
 /*# sourceMappingURL=calculator.css.map */

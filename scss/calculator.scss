@@ -64,21 +64,18 @@ main {
       border: none;
       box-sizing: border-box;
       padding: 8px 16px;
-      padding-top: 35px;
       line-height: 66px;
       border-radius: 20px 20px 0 0;
       background-color: color(color_blue, dark);
       color: color(other, white);
-      font-size: nth($font, 3);
+      &.calculator_text {
+        padding-top: 35px;
+        font-size: nth($font, 3);
+      }
     }
     .total {
-      display: inline-flex;
-      justify-content: flex-end;
       align-items: center;
-      box-sizing: border-box;
-      padding: 8px 16px;
       padding-top: 0;
-      line-height: 66px;
       color: color(other, white);
       font-size: nth($font, 4);
     }
@@ -120,14 +117,7 @@ main {
         border-radius: 16px;
         font-size: nth($font, 2);
         font-weight: 300;
-        &.operation {
-          line-height: 28px;
-          margin-left: 4px;
-          border-radius: 16px;
-          color: color(other, white);
-          background-color: color(color_blue, dark);
-          font-weight: normal;
-        }
+
         &:hover {
           color: color(color_blue, light);
         }
@@ -135,6 +125,14 @@ main {
           color: color(color_blue, dark);
           background-color: color(color_gray, light);
         }
+      }
+      .operation {
+        line-height: 28px;
+        margin-left: 4px;
+        border-radius: 16px;
+        color: color(other, white);
+        background-color: color(color_blue, dark);
+        font-weight: normal;
       }
     }
 
@@ -157,20 +155,7 @@ main {
         border-radius: 16px;
         font-size: nth($font, 2);
         color: color(color_blue, light);
-        &#sum_btn {
-          justify-content: flex-end;
-          padding-right: 30px;
-          width: 155px;
-          color: color(other, white);
-          background: linear-gradient(90deg, color(color_blue, light), color(color_blue, purple));
-          &:hover {
-            color: color(color_gray, light);
-          }
-          &:active {
-            color: color(color_blue, dark);
-            background: color(color_gray, light);
-          }
-        }
+
         &:hover {
           color: color(color_gray, light);
         }
@@ -179,6 +164,24 @@ main {
           background-color: color(color_gray, light);
         }
       }
+      #sum_btn {
+        justify-content: flex-end;
+        padding-right: 30px;
+        width: 155px;
+        color: color(other, white);
+        background: linear-gradient(90deg, color(color_blue, light), color(color_blue, purple));
+        &:hover {
+          color: color(color_gray, light);
+        }
+        &:active {
+          color: color(color_blue, dark);
+          background: color(color_gray, light);
+        }
+      }
+    }
+    .has_key_down {
+      color: color(color_blue, dark) !important ;
+      background: color(color_gray, light) !important ;
     }
   }
 }
