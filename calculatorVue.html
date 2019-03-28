@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style/calculator.min.css" />
+  </head>
+  <!-- 【特定技術】數字位數過多時，不能因此而破版，計算機功能皆須齊全
+
+【自我學習】請在此關卡中「自學一個你原本不太會的技巧」，投稿時分享你透過哪些資源學習，並寫範例程式碼講解該技巧，以及你如何應用在此關卡上。 -->
+
+  <body>
+    <main id="app">
+      <div class="calculator">
+        <div class="calculator_head">
+          <input type="text" :value="text" :class="{calculator_text:!getTotal,get_total:getTotal}" disabled />
+          <input type="text" class="total" v-model="total" disabled v-show="getTotal" />
+        </div>
+        <div class="calculator_body">
+          <ul class="calculator_number">
+            <li @mouseDown="addNum('7')" :class="{has_key_down:keyValue==='7'}">7</li>
+            <li @mouseDown="addNum('8')" :class="{has_key_down:keyValue==='8'}">8</li>
+            <li @mouseDown="addNum('9')" :class="{has_key_down:keyValue==='9'}">9</li>
+            <li class="operation" @mouseDown="addNum('÷')" :class="{has_key_down:keyValue==='÷'}">÷</li>
+            <li @mouseDown="addNum('4')" :class="{has_key_down:keyValue==='4'}">4</li>
+            <li @mouseDown="addNum('5')" :class="{has_key_down:keyValue==='5'}">5</li>
+            <li @mouseDown="addNum('6')" :class="{has_key_down:keyValue==='6'}">6</li>
+            <li class="operation" @mouseDown="addNum('×')" :class="{has_key_down:keyValue==='×'}">×</li>
+            <li @mouseDown="addNum('1')" :class="{has_key_down:keyValue==='1'}">1</li>
+            <li @mouseDown="addNum('2')" :class="{has_key_down:keyValue==='2'}">2</li>
+            <li @mouseDown="addNum('3')" :class="{has_key_down:keyValue==='3'}">3</li>
+            <li class="operation" @mouseDown="addNum('+')" :class="{has_key_down:keyValue==='+'}">+</li>
+            <li @mouseDown="addNum('0')" :class="{has_key_down:keyValue==='0'}">0</li>
+            <li @mouseDown="addNum('00')" :class="{has_key_down:keyValue==='00'}">00</li>
+            <li @mouseDown="addNum('.')" :class="{has_key_down:keyValue==='.'}">.</li>
+            <li class="operation" @mouseDown="addNum('-')" :class="{has_key_down:keyValue==='-'}">-</li>
+          </ul>
+          <ul class="calculator_bottom">
+            <li id="reset_btn" @mouseDown="calculatorHandle('reset')" :class="{has_key_down:keyValue==='reset'}">AC</li>
+            <li id="delete_btn" @mouseDown="calculatorHandle('del')" :class="{has_key_down:keyValue==='del'}">⌫</li>
+            <li id="sum_btn" @mouseDown="calculatorHandle('sum')" :class="{has_key_down:keyValue==='sum'}">=</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="calculatorVue.js"></script>
+  </body>
+</html>
