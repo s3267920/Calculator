@@ -184,7 +184,7 @@
         const vm = this;
         switch (way) {
           case 'sum':
-            if (!vm.storeNum.length) {
+            if (!vm.storeNum.length || !vm.lastNum.length) {
               return;
             } else {
               //第一次按下 = 時

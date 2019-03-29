@@ -258,7 +258,7 @@
       let keyValue = this.state.keyValue;
       switch (way) {
         case 'sum':
-          if (!storeNum.length) {
+          if (!storeNum.length || !lastNum.length) {
             return;
           } else {
             //第一次按下 = 時

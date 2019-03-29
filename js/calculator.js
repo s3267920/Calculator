@@ -197,7 +197,7 @@
     //在最後一個運算後按 = 會一直重複最後的運算
     switch (way) {
       case 'sum':
-        if (!storeNum.length) {
+        if (!storeNum.length || !lastNum.length) {
           return;
         } else {
           //第一次按下 = 時
@@ -298,7 +298,6 @@
         switch (e.target.id) {
           case 'sum_btn':
             calculatorHandle('sum');
-            getTotal = true;
             break;
           case 'delete_btn':
             calculatorHandle('del');
