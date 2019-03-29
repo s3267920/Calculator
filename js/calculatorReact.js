@@ -10,9 +10,9 @@
             type="text"
             className={this.props.getTotal ? 'get_total' : 'calculator_text'}
             value={this.props.num}
-            disabled
+            readOnly
           />
-          <input type="text" className="total" value={this.props.total} disabled style={displayControl} />
+          <input type="text" className="total" value={this.props.total} readOnly style={displayControl} />
         </div>
       );
     }

@@ -42,8 +42,8 @@
     <main id="app">
       <div class="calculator">
         <div class="calculator_head">
-          <input type="text" :value="text" :class="{calculator_text:!getTotal,get_total:getTotal}" disabled />
-          <input type="text" class="total" v-model="total" disabled v-show="getTotal" />
+          <input type="text" :value="text" :class="{calculator_text:!getTotal,get_total:getTotal}" readonly />
+          <input type="text" class="total" v-model="total" readonly v-show="getTotal" />
         </div>
         <div class="calculator_body">
           <ul class="calculator_number">
