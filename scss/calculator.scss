@@ -30,6 +30,7 @@ body {
   font-family: Roboto, Helvetica, sans-serif;
 }
 header {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,21 +39,23 @@ header {
   nav {
     ul {
       display: flex;
-      a {
+      li {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        height: 69px;
-        margin: 0 5px;
         box-sizing: border-box;
-        text-decoration: none;
-        li {
+        margin: 0 5px;
+        height: 69px;
+
+        a {
           display: inline-flex;
           justify-content: center;
           align-items: center;
-          padding: 0 10px;
+          height: 40px;
           line-height: 40px;
           color: color(other, white);
+          padding: 0 10px;
+          text-decoration: none;
           &:hover {
             background-color: color(color_blue, dark30);
             border-radius: 10px;
